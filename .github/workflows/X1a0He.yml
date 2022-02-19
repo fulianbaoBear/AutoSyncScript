@@ -1,0 +1,28 @@
+name: X1a0He-sync
+on:
+  schedule:
+    - cron: '14 */3 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  repository_dispatch:
+    types: sync-X1a0He-scripts
+jobs:
+  repo-sync:
+    env:
+      PAT: ${{ secrets.PAT }} 
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: sync X1a0He-scripts
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/DovFork/X1a0He.git""
+          source_branch: "master"
+          destination_branch: "X1a0He"
+          github_token: ${{ secrets.PAT }}
