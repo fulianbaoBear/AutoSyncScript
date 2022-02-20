@@ -1,4 +1,4 @@
-name: feizao-sync
+name: ClassmateLin_v2-sync
 on:
   schedule:
     - cron: '1 */3 * * *'
@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-age174--
+    types: sync-ClassmateLin_v2
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync age174--
+      - name: sync ClassmateLin_v2
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/age174/-.git"
-          source_branch: "main"
-          destination_branch: "feizao"
+          source_repo: "https://github.com/ClassmateLin/scripts_v2.git"
+          source_branch: "master"
+          destination_branch: "ClassmateLin_v2"
           github_token: ${{ secrets.PAT }}
