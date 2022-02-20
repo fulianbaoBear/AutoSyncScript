@@ -1,4 +1,4 @@
-name: lxk0301-sync
+name: he1pu-sync
 on:
   schedule:
     - cron: '4 */3 * * *'
@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-ElsaKing-DogDog
+    types: sync-he1pu
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync ElsaKing-DogDog
+      - name: sync he1pu
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/ElsaKing/DogDog.git"
+          source_repo: "https://github.com/he1pu/JDHelp.git"
           source_branch: "main"
-          destination_branch: "lxk0301"
+          destination_branch: "he1pu"
           github_token: ${{ secrets.PAT }}
