@@ -4,7 +4,7 @@
 
 
 
-name: Sunert-sync
+name: smiek2121-sync
 on:
   schedule:
     - cron: '3 */3 * * *'
@@ -12,7 +12,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-Sunert-Scripts
+    types: sync-smiek2121-Scripts
 jobs:
   repo-sync:
     env:
@@ -24,11 +24,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync Sunert-Scripts
+      - name: sync smiek2121-Scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/Sunert/Scripts.git"
+          source_repo: "https://github.com/smiek2121/scripts.git"
           source_branch: "master"
-          destination_branch: "Sunert"
+          destination_branch: "smiek2121"
           github_token: ${{ secrets.PAT }}
