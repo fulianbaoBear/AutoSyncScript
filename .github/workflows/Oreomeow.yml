@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-i-chenzhe-qx
+    types: sync-Oreomeow-qx
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync i-chenzhe-qx
+      - name: sync Oreomeow-qx
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/i-chenzhe/qx.git"
+          source_repo: "https://github.com/Oreomeow/VIP.git"
           source_branch: "main"
-          destination_branch: "i-chenzhe"
+          destination_branch: "Oreomeow"
           github_token: ${{ secrets.PAT }}
