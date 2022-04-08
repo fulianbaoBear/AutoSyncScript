@@ -12,6 +12,8 @@ SEVENDAY_LIST3  // https://cjhy-isv.isvjcloud.com/sign/signActivity?activityId=
 
 特别说明：搬运脚本已得到大佬许可，此仓库脚本仅作为个人使用并可能用于日常线报活动分享，感谢大佬提供的脚本
 
+cron: 7 7 7 7 7 jd_sevenDay.js
+
 */
 
 const $ = new Env('超级无线店铺签到');
