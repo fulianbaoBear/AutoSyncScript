@@ -1,6 +1,7 @@
 #!/bin/bash
-# Update: 2022-04-06
-# Content: add  jd_carnivalcity.js(京东手机狂欢城)
+# Update: 2022-04-13
+# Content: add  jd_april.js(早鸟派对互动游戏)
+#          del  jd_fanli.js jd_cash.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -22,7 +23,6 @@
 #  jd_joy_park_task.js             汪汪乐园每日任务
 #  jd_dwapp.js                     积分换话费
 #  jd_nnfls.js                     牛牛福利社
-#  jd_fanli.js                     京东饭粒
 #  jd_gold_sign.js                 京东金榜签到
 #  jd_beauty_ex.js                 美丽研究院兑换京豆
 #  jd_jfcz.js                      见缝插针
@@ -37,9 +37,9 @@
 #  jd_mpdzcar_game.js              京东汽车头文字J游戏
 #  jd_mpdzcar_help.js              京东汽车头文字J助力
 #  jd_ddly.js                      东东乐园
-#  jd_cash.js                      签到领现金
 #  jd_speed_redpocke.js            京东极速版红包
 #  jd_carnivalcity.js              京东手机狂欢城
+#  jd_april.js                     早鸟派对互动游戏
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -69,15 +69,15 @@
 
 ##############################  近  期  删  除  ##############################
 
-# jd_babel_sign.js
-# jd_sxLottery.js
+# jd_fanli.js
+# jd_cash.js
 
 ##############################  主  要  代  码  ##############################
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
 UpdateDate="2022-04-06"
-UpdateContent="add  jd_carnivalcity.js(京东手机狂欢城)"
+UpdateContent="add  jd_april.js(早鸟派对互动游戏)${NEWLINE}del  jd_fanli.js jd_cash.js"
 
 ## 作者
 author_list="Public smiek2221 star261 yyds X1a0He KingRan Dellear jiulan"
@@ -109,11 +109,11 @@ my_scripts_list_smiek2221="jd_sign_graphics.js sign_graphics_validate.js JDJRVal
 
 ## star261
 scripts_base_url_star261=https://raw.githubusercontent.com/star261/jd/main/scripts/
-my_scripts_list_star261="jd_productZ4Brand.js jd_fan.js"
+my_scripts_list_star261="jd_productZ4Brand.js jd_fan.js jd_april.js"
 
 ## yyds
 scripts_base_url_yyds=https://raw.githubusercontent.com/okyyds/yydspure/master/
-my_scripts_list_yyds="JDSignValidator.js jd_try.js jd_try_notify.py jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_nnfls.js jd_gold_sign.js jd_fanli.js jd_beauty_ex.js jd_wq_wxsign.js jd_wyw.js jd_mpdzcar.js jd_mpdzcar_game.js jd_mpdzcar_help.js jd_cash.js jd_ddly.js jd_speed_redpocke.js jd_carnivalcity.js"
+my_scripts_list_yyds="JDSignValidator.js jd_try.js jd_try_notify.py jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_nnfls.js jd_gold_sign.js jd_beauty_ex.js jd_wq_wxsign.js jd_wyw.js jd_mpdzcar.js jd_mpdzcar_game.js jd_mpdzcar_help.js jd_ddly.js jd_speed_redpocke.js jd_carnivalcity.js"
 
 ## X1a0He
 scripts_base_url_X1a0He=https://raw.githubusercontent.com/X1a0He/jd_scripts_fixed/main/
@@ -301,7 +301,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts=""
+DeleteScripts="jd_fanli.js jd_cash.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
