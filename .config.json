@@ -1,0 +1,30 @@
+{
+  "notify": {
+    "tg": {
+      "bot_token": "",
+      "user_id": 1
+    },
+    "server_jiang": "",
+    "push_plus": ""
+  },
+  "jd":{
+    "cookies": [
+      "pt_pin=xxx;pt_key=xxx;",
+      "pt_pin=xxx;pt_key=xxx;"
+    ],
+    "farm": {
+      "keep_water": 80
+    }
+  },
+  "elm": {
+    "sid": []
+  },
+  "mt": {
+    "users": [
+      {
+        "user_id": 1,
+        "token": "xxx"
+      }
+    ]
+  }
+}

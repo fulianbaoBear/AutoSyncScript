@@ -119,7 +119,8 @@ dmypy.json
 /dist
 /build
 test.py
-conf/config.yaml
+conf/config.json
 /jd
 sqlite.db
 test*.py
+shell/crontab.sh

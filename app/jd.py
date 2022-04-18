@@ -18,6 +18,7 @@ from abc import ABCMeta, abstractmethod
 from rich.console import Console
 
 from conf.config import JD_CONF
+from com.notify import notify
 
 
 class JdApp(metaclass=ABCMeta):
@@ -29,10 +30,12 @@ class JdApp(metaclass=ABCMeta):
         self.pt_key = kwargs.get('pt_key', None)
         self.sort = kwargs.get('sort', None)
         self.conf = kwargs.get('conf')
+        self.wq_auth_token = kwargs.get('wq_auth_token', '')
         self._result_msg = None
         self.cookies = {
             'pt_pin': self.pt_pin,
             'pt_key': self.pt_key,
+            'wq_auth_token': self.wq_auth_token,
         }
         self.headers = {
             'user-agent': 'jdapp;iPhone;10.4.6;14.1;network/wifi;Mozilla/5.0 (iPhone;'
@@ -125,6 +128,7 @@ def run_jd(jd_cls):
     process_list = []
     pool = multiprocessing.Pool(process_count)
 
+    notify_title = ''
     for i in range(len(cookies_list)):
 
         d = {item[0]: item[1] for item in re.findall(r'([^=]+)=([^;]+);?', cookies_list[i] if cookies_list[i] else '')}
@@ -138,11 +142,19 @@ def run_jd(jd_cls):
         d['conf'] = JD_CONF
         process = pool.apply_async(run, args=(jd_cls,), kwds=d)
         process_list.append(process)
+        if not notify_title:
+            t = jd_cls(**d)
+            notify_title = t.app_name
 
     pool.close()
     pool.join()
 
+    notify_msg = ''
     for process in process_list:
         message = process.get()
         if not message:
             continue
+        notify_msg = '\n\n'.join([notify_msg, message])
+
+    notify(notify_title, notify_msg)
+
