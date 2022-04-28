@@ -1,7 +1,7 @@
 #!/bin/bash
 # Update: 2022-04-28
-# Content: add  jd_beauty.js(美丽研究院修复版)
-#          del  jd_desire.js jd_joy_park.js jd_joy_park_task.js
+# Content: add  jd_beauty.js(美丽研究院修复版) jd_big_winner_Mod.js(发财大赢家翻翻乐)
+#          del  jd_desire.js jd_joy_park.js jd_joy_park_task.js jd_jdtj_winner.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -24,7 +24,6 @@
 #  jd_gold_sign.js                 京东金榜签到
 #  jd_beauty_ex.js                 美丽研究院兑换京豆
 #  jd_jfcz.js                      见缝插针
-#  jd_jdtj_winner.js               京东特价翻翻乐
 #  jd_m_sign.js                    京东通天塔--签到
 #  jd_txjf.js                      通讯积分
 #  jd_wish.js                      众筹许愿池
@@ -37,6 +36,7 @@
 #  jd_ddly.js                      东东乐园
 #  jd_speed_redpocke.js            京东极速版红包
 #  jd_beauty.js                    美丽研究院修复版
+#  jd_big_winner_Mod.js            发财大赢家翻翻乐
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -69,16 +69,17 @@
 # jd_desire.js
 # jd_joy_park.js
 # jd_joy_park_task.js
+# jd_jdtj_winner.js
 
 ##############################  主  要  代  码  ##############################
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
 UpdateDate="2022-04-28"
-UpdateContent="add  jd_beauty.js(美丽研究院修复版)${NEWLINE}del  jd_desire.js jd_joy_park.js jd_joy_park_task.js"
+UpdateContent="add  jd_beauty.js(美丽研究院修复版) jd_big_winner_Mod.js(发财大赢家翻翻乐)${NEWLINE}del  jd_desire.js jd_joy_park.js jd_joy_park_task.js jd_jdtj_winner.js"
 
 ## 作者
-author_list="Public smiek2221 star261 yyds X1a0He KingRan Dellear jiulan"
+author_list="Public smiek2221 star261 yyds X1a0He KingRan Dellear jiulan ccwav"
 author_name=(
   Public
   青蛙
@@ -88,6 +89,7 @@ author_name=(
   KingRan
   Dellear
   jiulan
+  ccwav
 )
 
 ## 定义下载代理 (非内置功能)
@@ -127,7 +129,11 @@ my_scripts_list_Dellear="jd_bean_xibean.js jd_price.js"
 
 ## jiulan
 scripts_base_url_jiulan=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/
-my_scripts_list_jiulan="jd_jfcz.js jd_jdtj_winner.js jd_txjf.js"
+my_scripts_list_jiulan="jd_jfcz.js jd_txjf.js"
+
+## ccwav
+scripts_base_url_ccwav=https://raw.githubusercontent.com/ccwav/QLScript2/main/ModScript/
+my_scripts_list_ccwav="jd_big_winner_Mod.js"
 
 ## 小埋
 scripts_base_url_duck=https://raw.githubusercontent.com/okyyds/duck/master/
@@ -136,10 +142,6 @@ my_scripts_list_duck=""
 ## zero205
 scripts_base_url_zero205=https://raw.githubusercontent.com/zero205/JD_tencent_scf/main/
 my_scripts_list_zero205=""
-
-## ccwav
-scripts_base_url_ccwav=https://raw.githubusercontent.com/ccwav/QLScript2/main/
-my_scripts_list_ccwav=""
 
 ## he1pu
 scripts_base_url_he1pu=https://raw.githubusercontent.com/he1pu/JDHelp/main/
@@ -299,7 +301,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts="jd_desire.js jd_joy_park.js jd_joy_park_task.js"
+DeleteScripts="jd_desire.js jd_joy_park.js jd_joy_park_task.js jd_jdtj_winner.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
