@@ -1,7 +1,7 @@
 /*
 店铺签到
 活动时间：长期
-更新时间：2022-04-30
+更新时间：2022-05-01
 活动地址：https://h5.m.jd.com/babelDiy/Zeus/2PAAf74aG3D61qvfKUM5dxUssJQ9/index.html?token=<TOKEN>
 脚本兼容: QuantumultX, Surge,Loon, JSBox, Node.js
 
@@ -31,6 +31,7 @@ let vender=''
 let num=0
 let shopname=''
 const token = [
+  '1CE732802F263936ED24CCE583DCDA7D',//日签8豆,7天77豆
   '4DAE4AF44B8031613282AA320BB58BB2',//5天50.0豆
   'B3E1665D2154B1CCF6FA036F53D28707',//日签2.0豆,7天20.0豆
   'D88BAFF737E9C4295F973732214F5DE5',//7天20.0豆
