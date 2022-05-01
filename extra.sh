@@ -70,8 +70,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2022-04-28"
-UpdateContent="add  jd_beauty.js(美丽研究院修复版) jd_big_winner_Mod.js(发财大赢家翻翻乐)${NEWLINE}del  jd_desire.js jd_joy_park.js jd_joy_park_task.js jd_jdtj_winner.js"
+UpdateDate="2022-05-02"
+UpdateContent="add  jd_dlzncjj.js(大力智能品牌联合活动抽奖机)"
 
 ## 作者
 author_list="Public smiek2221 star261 yyds X1a0He KingRan Dellear jiulan ccwav"
