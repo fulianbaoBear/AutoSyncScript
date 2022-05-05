@@ -1,6 +1,6 @@
 #!/bin/bash
-# Update: 2022-05-05
-# Content: add  jd_superBrand.js(特务Z) jd_superBrandStar.js(特务之明星送好礼)
+# Update: 2022-05-06
+# Content: del  jd_superBrandStar.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -38,7 +38,6 @@
 #  jd_big_winner_Mod.js            发财大赢家翻翻乐
 #  jd_dlzncjj.js                   大力智能品牌联合活动抽奖机   (5.8结束)
 #  jd_superBrand.js                特务Z
-#  jd_superBrandStar.js            特务之明星送好礼
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -68,12 +67,14 @@
 
 ##############################  近  期  删  除  ##############################
 
+# jd_superBrandStar.js
+
 ##############################  主  要  代  码  ##############################
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2022-05-05"
-UpdateContent="add  jd_superBrand.js(特务Z) jd_superBrandStar.js(特务之明星送好礼)"
+UpdateDate="2022-05-06"
+UpdateContent="del  jd_superBrandStar.js"
 
 ## 作者
 author_list="Public smiek2221 star261 yyds X1a0He KingRan Dellear jiulan ccwav"
@@ -118,7 +119,7 @@ my_scripts_list_X1a0He="jd_unsubscribe_xh.js"
 
 ## KingRan
 scripts_base_url_KingRan=https://raw.githubusercontent.com/KingRan/KR/main/
-my_scripts_list_KingRan="jd_wish.js jd_m_sign.js jd_beauty.js jd_dlzncjj.js jd_superBrand.js jd_superBrandStar.js"
+my_scripts_list_KingRan="jd_wish.js jd_m_sign.js jd_beauty.js jd_dlzncjj.js jd_superBrand.js"
 
 ## Dellear
 scripts_base_url_Dellear=https://raw.githubusercontent.com/Dellear/lost/main/extra/
@@ -295,7 +296,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts=""
+DeleteScripts="jd_superBrandStar.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
