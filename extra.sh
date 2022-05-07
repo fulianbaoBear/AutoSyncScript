@@ -1,6 +1,6 @@
 #!/bin/bash
-# Update: 2022-05-06
-# Content: del  jd_superBrandStar.js
+# Update: 2022-05-07
+# Content: add  jd_motherDay.js(我和妈妈的幸福合拍)
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -38,6 +38,7 @@
 #  jd_big_winner_Mod.js            发财大赢家翻翻乐
 #  jd_dlzncjj.js                   大力智能品牌联合活动抽奖机   (5.8结束)
 #  jd_superBrand.js                特务Z
+#  jd_motherDay.js                 我和妈妈的幸福合拍         (5.8结束)
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -67,14 +68,12 @@
 
 ##############################  近  期  删  除  ##############################
 
-# jd_superBrandStar.js
-
 ##############################  主  要  代  码  ##############################
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
-NEWLINE="\n          "
-UpdateDate="2022-05-06"
-UpdateContent="del  jd_superBrandStar.js"
+NewLine="\n          "
+UpdateDate="2022-05-07"
+UpdateContent="add  jd_motherDay.js(我和妈妈的幸福合拍)"
 
 ## 作者
 author_list="Public smiek2221 star261 yyds X1a0He KingRan Dellear jiulan ccwav"
@@ -107,7 +106,7 @@ my_scripts_list_smiek2221="jd_sign_graphics.js sign_graphics_validate.js JDJRVal
 
 ## star261
 scripts_base_url_star261=https://raw.githubusercontent.com/star261/jd/main/scripts/
-my_scripts_list_star261="jd_productZ4Brand.js jd_fan.js"
+my_scripts_list_star261="jd_productZ4Brand.js jd_fan.js jd_motherDay.js"
 
 ## yyds
 scripts_base_url_yyds=https://raw.githubusercontent.com/okyyds/yydspure/master/
@@ -296,7 +295,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts="jd_superBrandStar.js"
+DeleteScripts=""
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
