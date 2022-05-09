@@ -1,7 +1,7 @@
 #!/bin/bash
 # Update: 2022-05-09
-# Content: add  jd_xgyl_wx.js(小鸽有礼) jd_joy_park_task.js(汪汪乐园每日任务)
-#          del  jd_dlzncjj.js jd_motherDay.js
+# Content: add  jd_xgyl_wx.js(小鸽有礼) jd_joy_park_task.js(汪汪乐园每日任务) jd_twCard.js(特务Z集卡)
+#          del  jd_dlzncjj.js jd_motherDay.js jd_superBrand.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -37,9 +37,9 @@
 #  jd_speed_redpocke.js            京东极速版红包
 #  jd_beauty.js                    美丽研究院修复版
 #  jd_big_winner_Mod.js            发财大赢家翻翻乐
-#  jd_superBrand.js                特务Z
 #  jd_xgyl_wx.js                   小鸽有礼
 #  jd_joy_park_task.js             汪汪乐园每日任务
+#  jd_twCard.js                    特务Z集卡
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -71,13 +71,14 @@
 
 # jd_dlzncjj.js
 # jd_motherDay.js
+# jd_superBrand.js
 
 ##############################  主  要  代  码  ##############################
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NewLine="\n          "
 UpdateDate="2022-05-09"
-UpdateContent="add  jd_xgyl_wx.js(小鸽有礼) jd_joy_park_task.js(汪汪乐园每日任务)${NewLine}del  jd_dlzncjj.js jd_motherDay.js"
+UpdateContent="add  jd_xgyl_wx.js(小鸽有礼) jd_joy_park_task.js(汪汪乐园每日任务) jd_twCard.js(特务Z集卡)${NewLine}del  jd_dlzncjj.js jd_motherDay.js"
 
 ## 作者
 author_list="Public smiek2221 star261 yyds X1a0He KingRan Dellear jiulan ccwav"
@@ -110,7 +111,7 @@ my_scripts_list_smiek2221="jd_sign_graphics.js sign_graphics_validate.js JDJRVal
 
 ## star261
 scripts_base_url_star261=https://raw.githubusercontent.com/star261/jd/main/scripts/
-my_scripts_list_star261="jd_productZ4Brand.js jd_fan.js"
+my_scripts_list_star261="jd_productZ4Brand.js jd_fan.js jd_twCard.js"
 
 ## yyds
 scripts_base_url_yyds=https://raw.githubusercontent.com/okyyds/yydspure/master/
@@ -122,7 +123,7 @@ my_scripts_list_X1a0He="jd_unsubscribe_xh.js"
 
 ## KingRan
 scripts_base_url_KingRan=https://raw.githubusercontent.com/KingRan/KR/main/
-my_scripts_list_KingRan="jd_wish.js jd_m_sign.js jd_beauty.js jd_superBrand.js jd_xgyl_wx.js jd_joy_park_task.js"
+my_scripts_list_KingRan="jd_wish.js jd_m_sign.js jd_beauty.js jd_xgyl_wx.js jd_joy_park_task.js"
 
 ## Dellear
 scripts_base_url_Dellear=https://raw.githubusercontent.com/Dellear/lost/main/extra/
@@ -299,7 +300,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts=" jd_dlzncjj.js jd_motherDay.js"
+DeleteScripts="jd_dlzncjj.js jd_motherDay.js jd_superBrand.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
